@@ -5,7 +5,64 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <style>
-        body {}
+        body {
+            background-color: #FFF;
+            font-family: 'Arial', sans-serif;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #466995;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .questions, .answers {
+            position: relative;
+            top: 100px;
+            padding: 10px;
+        }
+
+        h1 {
+            color: #FFF;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #466995;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0 auto 20px auto;
+        }
+
+        ol {
+            padding: 0 20px;
+        }
+
+        li, label, input {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 150%;
+            margin-right: 10px;
+        }
+
+        #result {
+            margin: 20px auto;
+        }
+
+        #check {
+            color: #466995;
+        }
+
+        .correct {
+            color: #46954a;
+        }
+
     </style>
 </head>
 <body>
@@ -16,6 +73,7 @@
             const num = answer.value;
             if(num === "3"){
                 result.innerHTML = 'You answered correctly!';
+                result.className = 'correct';
             } else {
                 result.innerHTML = 'Try again...';
             }
@@ -25,20 +83,22 @@
         <h1>Simple Trivia</h1>
     </header>
     <main>
+        <div class="questions">
         <h2>What is the name of the city where the cartoon family The Simpsons live?</h2>
-        <ol>
-            <li>Castleville</li>
-            <li>Fernfield</li>
-            <li>Springfield</li>
-            <li>Stoningham</li>
-            <li>Fairview</li>
-        </ol>
-        <label for="answer">Enter the number of your answer:</label>
-        <input type="number" name="answer" id="answer" required min="1" max="5">
-        <br>
-        <input type="button" id="check" value="Check your answer" onclick="checkAnswer();">
-        <br><br>
-        <h2 id="result"></h2>
+            <ol>
+                <li>Castleville</li>
+                <li>Fernfield</li>
+                <li>Springfield</li>
+                <li>Stoningham</li>
+                <li>Fairview</li>
+            </ol>
+        </div>
+        <div class="answers">
+            <label for="answer">Enter the number of your answer:</label>
+            <input type="number" name="answer" id="answer" required min="1" max="5">
+            <input type="button" id="check" value="Check your answer" onclick="checkAnswer();">
+            <h2 id="result"></h2>
+        </div>
     </main>
 </body>
 </html>
