@@ -6,17 +6,40 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <style>
-        body {
-
-        }
+        
     </style>
+    
 </head>
 <body>
     <header>
         <h1>Simple Trivia</h1>
     </header>
     <main>
-        Content Here
+        <div class="qustion">Name the world's biggest island</div>
+        <ol>
+            <li>New Guinea</li>
+            <li>Borneo</li>
+            <li>Madagascar</li>
+            <li>Greenland</li>
+            <li>Baffin Island</li>
+            <br>
+            <label for="answer">Your answer: 
+                <input type="number" min="1" max="5" id="answer">
+            </label>
+            <br>
+            <input id="answerSubmit" type="button" value="Submit" >
+            <br><br>
+            <div class = "feedback"></div>
+        </ol>
     </main>
+    
+    <script>
+        document.querySelector("#answerSubmit").addEventListener("click", function(){
+            if(document.querySelector('#answer').value === "4")
+                document.querySelector(".feedback").innerHTML = "Correct!"
+            else
+                document.querySelector(".feedback").innerHTML = "Wrong, try again"
+        });
+    </script>
 </body>
 </html>
