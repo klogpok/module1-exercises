@@ -3,15 +3,24 @@
 <head>
     <title>Simple Trivia</title>
     <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <style>
-        body {
-
-        }
+        body {}
     </style>
 </head>
 <body>
+    <script type="text/javascript">
+        function checkAnswer () {
+            const result = document.getElementById('result');
+            const answer = document.getElementById('answer');
+            const num = answer.value;
+            if(num === "3"){
+                result.innerHTML = 'You answered correctly!';
+            } else {
+                result.innerHTML = 'Try again...';
+            }
+        }; 
+    </script>
     <header>
         <h1>Simple Trivia</h1>
     </header>
@@ -24,12 +33,12 @@
             <li>Stoningham</li>
             <li>Fairview</li>
         </ol>
-        <form action="check.html" method="GET">
-            <label for="guess">Enter the number of your answer:</label>
-            <input type="number" name="guess" id="guess" required min="1" max="5">
-            <br>
-            <input type="submit" id="submission" value="Submit">
-        </form>
+        <label for="answer">Enter the number of your answer:</label>
+        <input type="number" name="answer" id="answer" required min="1" max="5">
+        <br>
+        <input type="button" id="check" value="Check your answer" onclick="checkAnswer();">
+        <br><br>
+        <h2 id="result"></h2>
     </main>
 </body>
 </html>
