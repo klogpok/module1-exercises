@@ -1,22 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Simple Trivia</title>
-    <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <style>
-        body {
-
-        }
-    </style>
+  <title>Simple Trivia</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>
+    body {
+      background-color: aqua;
+      font-family: 'Raleway', sans-serif;
+    }
+    header, h2 {
+        text-align: center;
+    }
+    header, main {
+        width: 350px;
+        margin: 0 auto;
+    }
+    .right {
+        color: green;
+    }
+    .worng {
+        color: red;
+    }
+    .confusedUser {
+        color: blueviolet;
+        
+    }
+    .right, .worng ,.confusedUser {
+        font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Simple Trivia</h1>
-    </header>
-    <main>
-        Content Here
-    </main>
+  <header>
+    <h1>Simple Trivia</h1>
+  </header>
+  <main>
+    <form>
+      <h2>My Very short Trivia</h2>
+      <p>What singer gave Marliyn Monroe a white poodle named Mafia?</p>
+      <ol>
+        <li>Jay - Z</li>
+        <li>Snoop Dog</li>
+        <li>Luciano Pavarotti</li>
+        <li>Frank Sinatra</li>
+        <li>Louis Armstrong</li>
+      </ol>
+      <label for="answer">Type your answer:</label>
+      <input type="number" name="answer" id="answer" min="1" max="5" required>
+      <input type="button" value="Confirm" id="confirmBtn">
+    </form>
+    <p id="reply"></p>
+    <script>
+      const btn = document.getElementById("confirmBtn");
+      const paragraph = document.getElementById("reply");
+      btn.addEventListener("click", updateReply);
+
+      function updateReply() {
+        let ans = document.getElementById("answer").value;
+
+        switch(ans) {
+          case "1":
+          case "2":
+          case "3":
+          case "5":
+            paragraph.className = "worng";
+            paragraph.innerHTML = "Worng! Try again.";
+            break;
+
+          case "4":
+            paragraph.className = "right";
+            paragraph.innerHTML = "You are correct!!!";
+            break;
+            
+          default:
+            paragraph.className = "confusedUser";
+            paragraph.innerHTML = "Choose your answer from the 5 options above (1 -> 5)"
+            break;
+        }
+
+      }
+    </script>
+  </main>
 </body>
 </html>
