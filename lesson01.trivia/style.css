@@ -62,10 +62,13 @@ h3 {
 /* // HELPERS */
 
 .container {
+    justify-content: flex-start;
+    align-items: center;
     width: 100vw;
     height: 100vh;
     max-width: 80rem;
     margin: 0 auto;
+    padding-top: 15rem;
 }
 
 .container > * {
