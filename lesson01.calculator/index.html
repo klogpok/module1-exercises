@@ -7,7 +7,36 @@
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <style>
         body {
+            margin: 0;
+            padding: 0;
+        }
+        button{
+            width: 40px;
+            border-color: grey;
+            background-color: cornflowerblue;
+            border-radius: 3px;
+            font-family: cursive;
+            font-style: oblique;
 
+        }
+        .userInput{
+            border-color: grey;
+            border-radius: 3px;
+        }
+        h1{
+            color: blueviolet;
+        }
+        header{
+            margin-left: 10px;
+        }
+        main{
+            margin-left: 19px;
+        }
+        table{
+            width: 200px;
+        }
+        input{
+            width: 184px;
         }
     </style>
 </head>
@@ -16,7 +45,37 @@
         <h1>Web Calculator</h1>
     </header>
     <main>
-        Content Here
+        <table>
+            <tr>
+               <td colspan="4"><input type="text" class="userInput"/></td>
+            </tr>
+            <tr>
+                <td><button>7</button></td>
+                <td><button>8</button></td>
+                <td><button>9</button></td>
+                <td><button>/</button></td>
+            </tr>
+            
+            <tr>
+                <td><button>4</button></td>
+                <td><button>5</button></td>
+                <td><button>6</button></td>
+                <td><button>x</button></td>
+            </tr>
+                
+            <tr>
+                <td><button>1</button></td>
+                <td><button>2</button></td>
+                <td><button>3</button></td>
+                <td><button>-</button></td>
+            </tr>
+            <tr>
+                <td><button>0</button></td>
+                <td><button>.</button></td>
+                <td><button>=</button></td>
+                <td><button>+</button></td>
+            </tr>
+        </table>
     </main>
 </body>
 </html>
