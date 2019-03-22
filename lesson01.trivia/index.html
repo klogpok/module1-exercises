@@ -1,22 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Simple Trivia</title>
+    <title>Lilach Simple Trivia</title>
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <style>
-        body {
-
-        }
+		h1 {
+			font-weight:normal; 
+		}
     </style>
 </head>
 <body>
     <header>
-        <h1>Simple Trivia</h1>
+        <h1>My Very short Trivia</h1>
     </header>
     <main>
-        Content Here
+	<div>What singer gave Marilyn Monroe a white poodle named Mafia?</div><br>
+
+	<form>
+	  <input type="radio" name="singer" value="Jay-Z">Jay-Z<br>
+	  <input type="radio" name="singer" value="Snoop Dog">Snoop Dog<br>
+	  <input type="radio" name="singer" value="Luciano Pavarotti">Luciano Pavarotti<br>
+	  <input type="radio" name="singer" value="Frank Sinatra">Frank Sinatra<br>
+	  <input type="radio" name="singer" value="Louis Armstorng">Louis Armstorng<br>
+	  <br>
+	  <input type="button" onclick="pickSinger()" value="Send answer">  
+	</form>
+
+	<script>
+		function pickSinger() {
+		  var singers = document.forms[0];
+		  var i;
+		  var result=false;
+		  for (i = 0; i < singers.length; i++) {
+			if (singers[i].checked) {
+				if (singers[i].value=="Frank Sinatra") {
+				  alert("Your choice " +singers[i].value+ " is correct")
+				}else{
+				  alert("Your choice " +singers[i].value+ " is not correct")
+				}
+			}
+		  }
+		}
+	</script>
     </main>
 </body>
 </html>
