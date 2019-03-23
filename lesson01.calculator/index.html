@@ -1,22 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Web Calculator</title>
-    <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <style>
-        body {
+    <head>
+        <title>Web Calculator</title>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="calc">
+                <div class="row">
+                    <div class="column" id="calc-display-val">0</div>
+                </div>
+                <div class="row">
+                    <div class="calc-btn" id="calc-clear">
+                        AC
+                    </div>
+                    <div class="calc-btn" id="calc-backspace">
+                        &#8612;
+                    </div>
 
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Web Calculator</h1>
-    </header>
-    <main>
-        Content Here
-    </main>
-</body>
+                    <div class="calc-btn calc-btn-operator" data-operation="x">
+                        &#xd7;
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="calc-btn calc-btn-num" data-num="1">1</div>
+                    <div class="calc-btn calc-btn-num" data-num="2">2</div>
+                    <div class="calc-btn calc-btn-num" data-num="3">3</div>
+                    <div class="calc-btn calc-btn-operator" data-operation="/">
+                        &divide;
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="calc-btn calc-btn-num" data-num="4">4</div>
+                    <div class="calc-btn calc-btn-num" data-num="5">5</div>
+                    <div class="calc-btn calc-btn-num" data-num="6">6</div>
+                    <div class="calc-btn calc-btn-operator" data-operation="+">
+                        +
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="calc-btn calc-btn-num" data-num="7">7</div>
+                    <div class="calc-btn calc-btn-num" data-num="8">8</div>
+                    <div class="calc-btn calc-btn-num" data-num="9">9</div>
+                    <div class="calc-btn calc-btn-operator" data-operation="-">
+                        -
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="calc-btn calc-btn-num" data-num="0">0</div>
+                    <div class="calc-btn" id="decimal">
+                        .
+                    </div>
+                    <div class="calc-btn calc-btn-operator" id="sign">
+                        +/-
+                    </div>
+                    <div
+                        class="calc-btn calc-btn-operator"
+                        id="equals"
+                        data-operation="="
+                    >
+                        &#x3d;
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
 </html>
